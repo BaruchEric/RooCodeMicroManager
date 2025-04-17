@@ -12,6 +12,8 @@ In the evolving landscape of AI development, where free access to powerful model
 - **Resource Allocation**: Simple tasks are handled by smaller, more affordable models (like GPT 4.1 nano), while complex tasks are reserved for more capable models (like Gemini 2.5 Pro Preview)
 - **Future-Proofing**: As AI services move towards paid models, this approach ensures sustainable development practices by optimizing resource usage
 
+![RooCode MicroManager Workflow](diagram.png)
+
 This repository contains a collection of specialized AI modes for code development and project management. To use these modes in your project, copy `custom_modes.json` to your project's root directory and rename it to `.roomodes`.
 
 ## Getting Started with MicroManager
@@ -46,21 +48,21 @@ The MicroManager mode is the recommended starting point for all tasks. It acts a
 
 ## Model Configuration
 
-Each mode is optimized for specific AI models to ensure the best performance:
+Each mode is optimized based on the capabilities of various AI models to ensure the best performance:
 
 | Mode | Recommended Model |
 |------|------------------|
-| MicroManager | Gemini 2.5 Pro Preview |
-| Intern | GPT 4.1 nano |
-| Junior | GPT 4.1 mini |
-| MidLevel | GPT 4.1 |
+| MicroManager | Gemini 2.5 Pro Preview | Claude 3.7 Thinking
+| Intern | Llama 3.1 Nemotron 253B | GPT 4.1 nano | local model
+| Junior | GPT 4.1 mini
+| MidLevel | GPT 4.1 | GPT o4-mini | DeepSeek v3
 | Senior | Gemini 2.5 Pro Preview or Claude 3.7 |
 | Designer | Claude 3.7 |
 | Researcher | Gemini 2.0 Flash |
 
 ### Special Notes
 
-- **CodeShortRules**: This is a prompt override for Intern mode, particularly useful when working with less capable models. It provides more explicit instructions and constraints to ensure successful task completion.
+- **CodeShortRules**: This is a prompt override for Intern mode, particularly useful when working with less capable models. It provides more explicit instructions and constraints to ensure successful task completion. Its recommended in particular for models that are local models with limited context windows.
 
 ## Available Modes
 
@@ -85,12 +87,6 @@ Specialized in providing research information about the existing codebase. Helps
 ### 🎨 Designer
 Focused on UI/UX design and styling. Works with existing branding and creates beautiful user interfaces.
 
-### CodeShortRules
-A streamlined coding mode focused on direct implementation with emphasis on following user questions and tool requirements.
-
-### Prompt + Think
-A mode that emphasizes structured thinking and analysis before taking action. Uses a think tool to verify requirements, check policies, and plan approaches before implementation.
-
 ## Usage
 
 1. Copy `custom_modes.json` to your project's root directory
@@ -98,3 +94,5 @@ A mode that emphasizes structured thinking and analysis before taking action. Us
 3. The modes will be available for use in your project
 
 Each mode is designed for specific types of tasks and can be used in combination to handle complex development workflows. The MicroManager mode can help coordinate between different modes to accomplish larger tasks efficiently.
+
+Sometimes you have to restart VSCode to get the modes to show in Roo Code.
